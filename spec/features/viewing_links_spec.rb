@@ -1,5 +1,5 @@
 require 'spec_helper'
-require './data_mapper_setup'
+require './app/data_mapper_setup'
 
 feature 'Viewing links' do
 

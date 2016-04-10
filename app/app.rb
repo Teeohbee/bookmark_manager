@@ -1,5 +1,5 @@
 require 'sinatra/base'
-require './data_mapper_setup'
+require_relative 'data_mapper_setup'
 
 class App < Sinatra::Base
   set :views, proc { File.join(root, "views") }
@@ -7,14 +7,13 @@ class App < Sinatra::Base
   # This does not work, why?
   # set :views, proc { File.join(root, ".." "views") }
 
-
   get '/' do
     'Hello App!'
   end
 
   get '/links' do
     @links = Link.all
-    erb :'links/index'
+    erb :index
   end
 
   # start the server if ruby file executed directly
